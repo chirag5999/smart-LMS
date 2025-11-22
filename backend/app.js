@@ -4,7 +4,7 @@ import morgan from "morgan";
 import dotenv from "dotenv";
 import connectDB from "./config/db.js";
 dotenv.config();
-
+import authRouter from "./routes/authRoutes.js";
 
 const app = express()
 
@@ -16,9 +16,7 @@ if(process.env.NODE_ENV === 'dev'){
     app.use(morgan('dev'));
 }
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
+app.use('/api/auth',authRouter);
 
 app.listen(process.env.PORT, () => {
   console.log(`Example app listening on port ${process.env.PORT}`)
