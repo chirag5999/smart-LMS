@@ -9,6 +9,6 @@ const courseSchema =  new mongoose.Schema({
 });
 
 
-const Course = mongoose.Model('Course',courseSchema);
+const Course = mongoose.model('Course',courseSchema);
 
 export default Course;

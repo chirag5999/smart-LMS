@@ -4,7 +4,7 @@ import { getCourse,getCourseById } from '../controllers/courseController.js';
 const courseRouter = express.Router();
 
 // get all courses
-courseRouter.get('/',getCourses);
+courseRouter.get('/',getCourse);
 
 // get course by its id
 courseRouter.get('/:id',getCourseById);
