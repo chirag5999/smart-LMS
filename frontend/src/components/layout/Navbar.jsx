@@ -1,51 +1,41 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
-// import logo from "../assets/logo.svg"; // Replace with your logo
+import { Link, NavLink } from "react-router-dom";
 
 export default function Navbar() {
-  const [open, setOpen] = useState(false);
-
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-white shadow-sm px-3 py-2">
-      <div className="container-fluid">
-
-        {/* BRAND / LOGO */}
+    <nav className="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-3">
+      <div className="container">
+        {/* Brand */}
         <Link className="navbar-brand fw-bold text-primary" to="/">
-          {/* <img src="" alt="logo" width="35" className="me-2" /> */}
           Smart LMS
         </Link>
 
-        {/* MOBILE TOGGLE BUTTON */}
+        {/* Toggler (Mobile) */}
         <button
           className="navbar-toggler"
           type="button"
-          onClick={() => setOpen(!open)}
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
         >
           <span className="navbar-toggler-icon"></span>
         </button>
 
-        {/* NAVIGATION LINKS */}
-        <div className={`collapse navbar-collapse ${open ? "show" : ""}`}>
-          <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-
-             <li className="nav-item">
-              <Link className="nav-link fw-semibold" to="/">
-                Home
-              </Link>
-            </li>
-
+        {/* Links */}
+        <div className="collapse navbar-collapse" id="navbarNav">
+          <ul className="navbar-nav ms-auto">
             <li className="nav-item">
-              <Link className="nav-link fw-semibold" to="/courses">
-                Courses
-              </Link>
+              <NavLink className="nav-link" to="/">Home</NavLink>
             </li>
-
-            <li className="nav-item ms-lg-3">
-              <Link className="btn btn-primary px-3 fw-semibold" to="/login">
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/courses">Courses</NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="btn btn-primary ms-lg-3" to="/login">
                 Login
-              </Link>
+              </NavLink>
             </li>
-
           </ul>
         </div>
       </div>
