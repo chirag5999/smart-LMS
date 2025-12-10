@@ -1,7 +1,7 @@
 import Footer from './components/layout/Footer.jsx'
 import Navbar from './components/layout/Navbar.jsx'
 import Home from './pages/Home.jsx'
-import Login from './pages/Login'
+import Login from './pages/login.jsx'
 import { Routes, Route } from 'react-router-dom'
 import Register from './pages/Register.jsx'
 
