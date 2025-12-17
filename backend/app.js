@@ -8,6 +8,7 @@ import authRouter from "./routes/authRoutes.js";
 import courseRouter from "./routes/courseRoutes.js";
 import { auth } from "./middlewares/authMiddleware.js";
 import categoryRouter from "./routes/categoryRoutes.js";
+import paymentRouter from "./routes/paymentRoutes.js";
 
 const app = express()
 
@@ -18,6 +19,7 @@ app.use(cors());
 app.use('/api/auth',authRouter);
 app.use('/api/courses',courseRouter);
 app.use('/api/category',categoryRouter);
+app.use('/api/payment',paymentRouter);
 
 if(process.env.NODE_ENV === 'dev'){
     app.use(morgan('dev'));

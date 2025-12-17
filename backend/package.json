@@ -7,8 +7,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start:dev": "node --watch app.js",
-    "data:import":"node data/seeder.js",
-    "data:destroy":"node seeder.js -d"
+    "data:import": "node data/seeder.js",
+    "data:destroy": "node seeder.js -d"
   },
   "keywords": [],
   "author": "",
@@ -20,6 +20,7 @@
     "express": "^5.1.0",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.20.0",
-    "morgan": "^1.10.1"
+    "morgan": "^1.10.1",
+    "stripe": "^20.1.0"
   }
 }
